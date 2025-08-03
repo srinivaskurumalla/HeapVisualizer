@@ -1,0 +1,12 @@
+<div class="array-container">
+  <div
+    class="array-box"
+    *ngFor="let val of heapArray; let i = index"
+    [ngClass]="{
+      'current': i === currIdx,
+      'compare': compareIndices?.includes(i)
+    }"
+  >
+    {{ val }}
+  </div>
+</div>

@@ -1,0 +1,28 @@
+.array-container {
+  display: flex;
+  gap: 10px;
+  margin: 20px;
+  justify-content: center;
+}
+
+.array-box {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #444;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.array-box.current {
+  background-color: #ffc107 !important;
+  color: #000;
+}
+
+.array-box.compare {
+  background-color: #17a2b8;
+  color: white;
+}

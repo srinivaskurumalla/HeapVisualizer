@@ -1,0 +1,31 @@
+<div class="heap-container">
+  <h1>Heap Visualizer</h1>
+
+  <!-- controls -->
+  <div class="controls">
+    <input
+      type="number"
+      [(ngModel)]="valueToInsert"
+      placeholder="Enter a number"
+      (keydown.enter)="insertValue()"
+    />
+
+    <button (click)="insertValue()" >Insert</button>
+    <button (click)="extractValue()">Extract</button>
+    <button (click)="resetHeap()">Reset</button>
+  </div>
+
+  <!-- visualizations -->
+  <app-array-view
+    [heapArray]="heapArray"
+    [currIdx]="currentIndex"
+    [compareIndices]="compareIndices"
+  >
+  </app-array-view>
+
+  <app-tree-view
+    [heapArray]="heapArray"
+    [currIdx]="currentIndex"
+    [compareIndices]="compareIndices"
+  ></app-tree-view>
+</div>

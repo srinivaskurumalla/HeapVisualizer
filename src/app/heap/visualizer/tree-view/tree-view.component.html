@@ -1,0 +1,38 @@
+<ng-template #renderNode let-index="index">
+  <div class="tree-node">
+    <div class="node-box-wrapper">
+      <div
+        class="node-box"
+        [ngClass]="{
+          'current': index === currIdx,
+          'compare': compareIndices?.includes(index)
+        }"
+      >
+        {{ heapArray[index] }}
+      </div>
+
+      <div class="line left-line" *ngIf="getLeftChildIndex(index) < heapArray.length"></div>
+      <div class="line right-line" *ngIf="getRightChildIndex(index) < heapArray.length"></div>
+    </div>
+
+    <div class="children" *ngIf="getLeftChildIndex(index) < heapArray.length">
+      <!-- Render Left -->
+      <ng-container
+        *ngTemplateOutlet="renderNode; context: { index: getLeftChildIndex(index) }"
+      ></ng-container>
+
+      <!-- Render Right -->
+      <ng-container
+        *ngTemplateOutlet="renderNode; context: { index: getRightChildIndex(index) }"
+      ></ng-container>
+    </div>
+  </div>
+</ng-template>
+
+
+<div class="tree-wrapper" *ngIf="heapArray.length > 0">
+  <ng-container
+    [ngTemplateOutlet]="renderNode"
+    [ngTemplateOutletContext]="{ index: 0 }"
+  ></ng-container>
+</div>
