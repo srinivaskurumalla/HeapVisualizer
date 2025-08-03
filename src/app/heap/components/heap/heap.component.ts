@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { ArrayViewComponent } from '../../visualizer/array-view/array-view.component';
 import { TreeViewComponent } from '../../visualizer/tree-view/tree-view.component';
 import { HeapService } from '../../heap.service';
+import { TreeNodeComponent } from "../tree-node/tree-node.component";
 @Component({
   selector: 'app-heap',
   standalone: true,
@@ -11,8 +12,9 @@ import { HeapService } from '../../heap.service';
     CommonModule,
     FormsModule,
     ArrayViewComponent,
-    TreeViewComponent
-  ],
+    TreeViewComponent,
+    TreeNodeComponent
+],
   templateUrl: './heap.component.html',
   styleUrl: './heap.component.css'
 })

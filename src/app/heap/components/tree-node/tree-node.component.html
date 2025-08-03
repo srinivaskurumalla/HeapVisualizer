@@ -1,0 +1,17 @@
+<div class="tree-node">
+  <div class="node-box">{{ heapArray[index] }}</div>
+
+  <div class="children" *ngIf="hasLeft || hasRight">
+    <app-tree-node
+      *ngIf="hasLeft"
+      [heapArray]="heapArray"
+      [index]="leftIndex"
+    ></app-tree-node>
+
+    <app-tree-node
+      *ngIf="hasRight"
+      [heapArray]="heapArray"
+      [index]="rightIndex"
+    ></app-tree-node>
+  </div>
+</div>
